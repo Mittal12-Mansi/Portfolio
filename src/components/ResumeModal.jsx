@@ -63,20 +63,20 @@ ACHIEVEMENTS
       position: 'fixed',
       inset: 0,
       zIndex: 1000,
-      background: 'rgba(0, 0, 0, 0.8)',
+      background: 'rgba(0, 0, 0, 0.85)',
       backdropFilter: 'blur(12px)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: '1.5rem'
+      padding: '0.75rem'
     }}>
       <div className="glass-card" style={{
         width: '100%',
         maxWidth: '850px',
-        maxHeight: '90vh',
+        maxHeight: '92vh',
         overflowY: 'auto',
         background: 'var(--bg-surface)',
-        borderRadius: 'var(--radius-lg)',
+        borderRadius: 'var(--radius-md)',
         border: '1px solid var(--border-bright)',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.7)',
         display: 'flex',
@@ -88,28 +88,30 @@ ACHIEVEMENTS
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '1.2rem 1.8rem',
+          padding: '1rem 1.2rem',
           borderBottom: '1px solid var(--border-color)',
           background: 'rgba(15, 23, 42, 0.95)',
           position: 'sticky',
           top: 0,
-          zIndex: 10
+          zIndex: 10,
+          flexWrap: 'wrap',
+          gap: '0.6rem'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-            <span style={{ fontWeight: '700', fontSize: '1.1rem', color: 'var(--text-primary)' }}>
-              Mansi Mittal – Official Resume Preview
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <span style={{ fontWeight: '700', fontSize: '1rem', color: 'var(--text-primary)' }}>
+              Mansi Mittal – Official Resume
             </span>
-            <span className="badge badge-success" style={{ fontSize: '0.75rem' }}>Verified</span>
+            <span className="badge badge-success" style={{ fontSize: '0.72rem' }}>Verified</span>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-            <button className="btn btn-secondary" onClick={handleCopyResumeText} style={{ padding: '0.4rem 0.8rem', fontSize: '0.8rem' }}>
-              {copied ? <Check size={14} style={{ color: '#10b981' }} /> : <Copy size={14} />}
-              {copied ? 'Copied to Clipboard!' : 'Copy Text'}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap' }}>
+            <button className="btn btn-secondary" onClick={handleCopyResumeText} style={{ padding: '0.35rem 0.65rem', fontSize: '0.78rem' }}>
+              {copied ? <Check size={13} style={{ color: '#10b981' }} /> : <Copy size={13} />}
+              {copied ? 'Copied' : 'Copy'}
             </button>
             
-            <button className="btn btn-primary" onClick={handlePrint} style={{ padding: '0.4rem 0.8rem', fontSize: '0.8rem' }}>
-              <Printer size={14} /> Print / Save PDF
+            <button className="btn btn-primary" onClick={handlePrint} style={{ padding: '0.35rem 0.65rem', fontSize: '0.78rem' }}>
+              <Printer size={13} /> Print PDF
             </button>
 
             <button
@@ -118,8 +120,8 @@ ACHIEVEMENTS
                 background: 'rgba(255, 255, 255, 0.08)',
                 border: 'none',
                 color: 'var(--text-primary)',
-                width: '32px',
-                height: '32px',
+                width: '30px',
+                height: '30px',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
@@ -127,13 +129,13 @@ ACHIEVEMENTS
                 cursor: 'pointer'
               }}
             >
-              <X size={18} />
+              <X size={16} />
             </button>
           </div>
         </div>
 
         {/* Printable Resume Canvas */}
-        <div style={{ padding: '2rem 2.5rem', color: 'var(--text-primary)', fontFamily: 'var(--font-body)' }}>
+        <div style={{ padding: '1.5rem 1.2rem', color: 'var(--text-primary)', fontFamily: 'var(--font-body)' }}>
           
           {/* Resume Header */}
           <div style={{ textAlign: 'center', marginBottom: '1.8rem', paddingBottom: '1.2rem', borderBottom: '2px solid var(--border-color)' }}>
