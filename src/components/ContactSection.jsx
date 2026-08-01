@@ -93,7 +93,7 @@ export default function ContactSection({ onOpenResume }) {
                 Profiles & Coding Platforms
               </div>
               <div style={{ display: 'flex', gap: '0.8rem' }}>
-                <a href="https://github.com" target="_blank" rel="noreferrer" className="btn btn-secondary" style={{ flex: 1, padding: '0.6rem', fontSize: '0.82rem' }}>
+                <a href="https://github.com/Mittal12-Mansi" target="_blank" rel="noreferrer" className="btn btn-secondary" style={{ flex: 1, padding: '0.6rem', fontSize: '0.82rem' }}>
                   <SocialGithub size={16} /> GitHub
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="btn btn-secondary" style={{ flex: 1, padding: '0.6rem', fontSize: '0.82rem' }}>

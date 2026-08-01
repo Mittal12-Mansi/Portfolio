@@ -75,7 +75,7 @@ export default function Hero({ activeRole, onOpenResume }) {
 
           {/* Social Quick Links */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', color: 'var(--text-secondary)' }}>
-            <a href="https://github.com" target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.9rem' }}>
+            <a href="https://github.com/Mittal12-Mansi" target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.9rem' }}>
               <SocialGithub size={18} /> GitHub
             </a>
             <span>•</span>
