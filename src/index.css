@@ -66,12 +66,14 @@ html {
   color: var(--text-primary);
   line-height: 1.6;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
   overflow-x: hidden;
   min-height: 100vh;
   width: 100%;
+  position: relative;
 }
 
 /* Custom Scrollbar */
@@ -93,8 +95,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.25;
   word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .mono {
@@ -130,24 +133,26 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--shadow-card);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
+  max-width: 100%;
 }
 
 .glass-card:hover {
   border-color: var(--border-bright);
-  transform: translateY(-3px);
 }
 
 /* Layout Utilities */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .section {
   padding: 4.5rem 0;
   position: relative;
+  overflow: hidden;
 }
 
 .badge {
@@ -160,6 +165,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   letter-spacing: 0.02em;
   max-width: 100%;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .badge-sde {
@@ -196,6 +203,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   touch-action: manipulation;
   min-height: 42px;
+  white-space: nowrap;
 }
 
 .btn-primary {
@@ -203,19 +211,11 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
   box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
 }
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
-}
 
 .btn-secondary {
   background: rgba(255, 255, 255, 0.05);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
-}
-.btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--border-bright);
 }
 
 .btn-sde {
@@ -251,7 +251,6 @@ h1, h2, h3, h4, h5, h6 {
   animation: fadeIn 0.4s ease forwards;
 }
 
-/* Spin animation for icons */
 .spin {
   animation: spin 1s linear infinite;
 }
@@ -262,92 +261,82 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   Responsive Breakpoints & Media Queries
+   Responsive Rules
    ========================================================================== */
 
-/* Tablets & Small Laptops (<= 992px) */
 @media (max-width: 992px) {
   .section {
     padding: 3.5rem 0;
   }
-
-  .container {
-    padding: 0 1.2rem;
-  }
 }
 
-/* Mobile Devices & Portrait Tablets (<= 768px) */
 @media (max-width: 768px) {
-  /* Navbar Responsive */
   .desktop-nav {
     display: none !important;
   }
 
-  .mobile-menu-btn {
-    display: flex !important;
-  }
-
-  .nav-resume-btn {
+  .desktop-controls {
     display: none !important;
   }
 
-  .role-switcher-box {
-    scale: 0.95;
+  .mobile-controls {
+    display: flex !important;
   }
 
-  /* Hero Section Mobile */
+  .mobile-role-bar {
+    display: flex !important;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
   #hero {
-    padding-top: 2.5rem !important;
-    padding-bottom: 3rem !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2.5rem !important;
   }
 
-  #hero h1 {
-    font-size: 2.2rem !important;
-  }
-
-  #hero p {
-    font-size: 1rem !important;
-    line-height: 1.6 !important;
-  }
-
-  /* Grid adjustments for cards */
   .glass-card {
     padding: 1.2rem !important;
   }
+}
 
-  /* Full width buttons on mobile if needed */
-  .mobile-full-width {
+@media (max-width: 550px) {
+  .hero-btn-group {
+    flex-direction: column !important;
     width: 100% !important;
+  }
+
+  .hero-action-btn {
+    width: 100% !important;
+  }
+
+  .project-action-btns {
+    width: 100% !important;
+  }
+
+  .project-action-btns a {
+    flex: 1 !important;
+    text-align: center;
+  }
+
+  .hero-metrics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 
-/* Small Smartphones (<= 480px) */
-@media (max-width: 480px) {
+@media (max-width: 400px) {
   .container {
-    padding: 0 0.85rem;
-  }
-
-  .section {
-    padding: 2.5rem 0;
-  }
-
-  #hero h1 {
-    font-size: 1.85rem !important;
+    padding: 0 0.75rem;
   }
 
   .badge {
-    font-size: 0.75rem !important;
-    padding: 0.25rem 0.65rem !important;
+    font-size: 0.72rem !important;
+    padding: 0.25rem 0.55rem !important;
   }
 
   .btn {
-    font-size: 0.85rem !important;
-    padding: 0.6rem 1rem !important;
-  }
-
-  /* Education Timeline adjustment on mobile */
-  .timeline-border {
-    padding-left: 0.75rem !important;
-    margin-left: 0.25rem !important;
+    font-size: 0.82rem !important;
+    padding: 0.55rem 0.9rem !important;
   }
 }
